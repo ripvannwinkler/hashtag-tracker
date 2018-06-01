@@ -24,9 +24,9 @@ const twitterOpts = {
   track: '#unitedstarssweepstakes',
 };
 
-twitterOpts.track = '#sexy';
+console.log(`Tracking: ${twitterOpts.track}`);
+console.log(`Data directory: ${path.dirname(textFile)}`);
 
-console.log(path.dirname(textFile));
 mkdirp(path.dirname(textFile));
 mkdirp(path.dirname(logFile));
 
@@ -42,7 +42,8 @@ const writeTweetToFile = tweet => {
     id: tweet.id_str,
     is_retweet: !!tweet.retweeted_status,
     in_reply_to: tweet.in_reply_to_status_id_str,
-    from_username: tweet.user && tweet.user.screen_name || '',
+		from_username: tweet.user && tweet.user.screen_name || '',
+		link: `https://twitter.com/statuses/${tweet.id_str}`,
     media: tweet.entities && tweet.entities.media && tweet.entities.media[0].expanded_url || '',
     mentions: ((tweet.text || '').match(/@\w+/gmi) || []).map(x => x.substring(1)).join(','),
     tags: ((tweet.text || '').match(/#\w+/gmi) || []).map(x => x.substring(1)).join(','),
