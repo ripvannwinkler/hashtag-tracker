@@ -1,0 +1,23 @@
+{
+  "name": "hashtag-tracker",
+  "private": true,
+  "version": "1.0.0",
+  "main": "tracker.js",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ripvannwinkler/hashtag-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ripvannwinkler/hashtag-tracker/issues"
+  },
+  "homepage": "https://github.com/ripvannwinkler/hashtag-tracker#readme"
+}
