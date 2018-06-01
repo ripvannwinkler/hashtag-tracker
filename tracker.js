@@ -10,7 +10,9 @@
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
+const moment = require('moment');
 const Twitter = require('twitter');
+
 const secret = JSON.parse(fs.readFileSync('secret.json', 'utf8'));
 const exitEvents = ['SIGINT', 'uncaughtException', 'SIGTERM']
 
@@ -36,6 +38,7 @@ const writeTweetToLog = tweet => {
 
 const writeTweetToFile = tweet => {
   const o = {
+    time: moment(tweet.created_at, 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').toISOString(),
     id: tweet.id_str,
     is_retweet: !!tweet.retweeted_status,
     in_reply_to: tweet.in_reply_to_status_id_str,

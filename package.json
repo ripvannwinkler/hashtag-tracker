@@ -5,6 +5,7 @@
   "main": "tracker.js",
   "dependencies": {
     "mkdirp": "^0.5.1",
+    "moment": "^2.22.1",
     "twitter": "^1.7.1"
   },
   "devDependencies": {},
